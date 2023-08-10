@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 
 import axios from "axios";
+import { useState } from "react";
+
 function Header() {
   return (
     <header>
@@ -55,12 +57,14 @@ function Footer() {
 }
 
 function Content() {
-  let posts = [];
+  // let posts = [];
+  const [posts, setPosts] = useState([]);
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
       console.log(response.data);
-      posts = posts.data;
+      // posts = posts.data;
+      setPosts(response.data);
     });
   };
 
