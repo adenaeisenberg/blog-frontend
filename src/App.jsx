@@ -1,82 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import axios from "axios";
-import { useState } from "react";
-
-function Header() {
-  return (
-    <header>
-      <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a>
-    </header>
-  );
-}
-
-function PostsNew() {
-  return (
-    <div id="posts-new">
-      <h1>New post</h1>
-      <form>
-        <div>
-          Title: <input type="text" />
-        </div>
-        <div>
-          Body: <input type="text" />
-        </div>
-        <div>
-          Image: <input type="text" />
-        </div>
-        <button type="submit">Create Post</button>
-      </form>
-    </div>
-  );
-}
-
-function PostsIndex(props) {
-  console.log(props);
-  return (
-    <div id="posts-index">
-      <h1>All Posts</h1>
-      {props.posts.map((post) => (
-        <div key={post.id} className="posts">
-          <h2>{post.title}</h2>
-          <img src={post.image_url} alt={post.title} />
-          <p>Body: {post.body}</p>
-          <button>More info</button>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer>
-      <p>Copyright 2023</p>
-    </footer>
-  );
-}
-
-function Content() {
-  // let posts = [];
-  const [posts, setPosts] = useState([]);
-
-  const handleIndexPosts = () => {
-    axios.get("http://localhost:3000/posts.json").then((response) => {
-      console.log(response.data);
-      // posts = posts.data;
-      setPosts(response.data);
-    });
-  };
-
-  return (
-    <div>
-      <PostsNew />
-      <button onClick={handleIndexPosts}>Load Posts</button>
-
-      <PostsIndex posts={posts} />
-    </div>
-  );
-}
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { Content } from "./Content";
 
 function App() {
   return (
