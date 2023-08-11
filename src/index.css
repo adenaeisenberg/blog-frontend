@@ -1,3 +1,8 @@
+#root {
+font-family: "Arial Black", "Arial Bold", Gadget, sans-serif; 
+background-image: url("assets/bananas.webp");
+}
+
 #posts-index img {
   width: 300px;
 }
