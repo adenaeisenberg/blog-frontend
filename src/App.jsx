@@ -3,11 +3,13 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Content } from "./Content";
+import { Signup } from "./Signup";
 
 function App() {
   return (
     <div>
       <Header />
+      <Signup />
       <Content />
       <Footer />
     </div>
