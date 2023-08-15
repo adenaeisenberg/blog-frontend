@@ -1,14 +1,8 @@
-import axios from "axios";
-
-export function PostsNew() {
+export function PostsNew(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.post("http://localhost:3000/posts.json", params).then((response) => {
-      console.log(response.data);
-      event.target.reset();
-      window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
-    });
+    props.onCreatePost(params, () => event.target.reset());
   };
 
   return (

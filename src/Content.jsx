@@ -1,5 +1,9 @@
+/* eslint-disable no-undef */
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Signup } from "./Signup";
+import { Login } from "./Login";
+import { LogoutLink } from "./LogoutLink";
 import { PostsNew } from "./PostsNew";
 import { PostsIndex } from "./PostsIndex";
 import { Modal } from "./Modal";
@@ -9,6 +13,13 @@ export function Content() {
   const [posts, setPosts] = useState([]);
   const [isPostsShowVisible, setIsPostsShowVisible] = useState(false);
   const [currentPost, setCurrentPost] = useState({});
+
+  const handleCreatePost = (params, successCallback) => {
+    console.log("handleCreatePost", params);
+    axios.post("http://localhost:3000/posts.json", params);
+    setPosts([...posts, response.data]);
+    successCallback();
+  };
 
   const handleIndexPosts = () => {
     axios.get("http://localhost:3000/posts.json").then((response) => {
@@ -30,7 +41,10 @@ export function Content() {
 
   return (
     <div className="container">
-      <PostsNew />
+      <Signup />
+      <Login />
+      <LogoutLink />
+      <PostsNew onCreatePost={handleCreatePost} />
       <PostsIndex posts={posts} onShowPost={handleShowPost} />
       <Modal show={isPostsShowVisible} onClose={handleClose}>
         <PostsShow post={currentPost} />
