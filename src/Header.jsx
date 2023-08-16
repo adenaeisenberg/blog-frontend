@@ -22,15 +22,22 @@ export function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                <Link to="/about">About</Link>
               </li>
-              <Link to="/about">About</Link>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link to="/login">Login</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/logout">Logout</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/signup">Signup</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/">All Posts</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/posts/new">New Post</Link>
               </li>
               <li className="nav-item dropdown">
                 <a
@@ -40,31 +47,15 @@ export function Header() {
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  More Options Here
+                  More Settings
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="posts-index">
-                      All Post
-                    </a>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="posts-new">
-                      New Post
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
+                    <a className="dropdown-item" href="">
+                      Coming Soon...
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled">Disabled</a>
               </li>
             </ul>
             <form className="d-flex" role="search">
@@ -79,5 +70,3 @@ export function Header() {
     </header>
   );
 }
-
-/* <a href="#">Home</a> | <a href="#posts-index">All posts</a> | <a href="#posts-new">New post</a> */
