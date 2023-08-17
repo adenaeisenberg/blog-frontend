@@ -45,11 +45,9 @@ export function Header() {
                   </>
                 ) : (
                   <li>
-                    {/* <li className="dropdown-item"> */}
                     <li>
                       <LogoutLink />
                     </li>
-                    {/* </li> */}
                   </li>
                 )}
                 ;
