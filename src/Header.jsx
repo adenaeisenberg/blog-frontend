@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
   return (
@@ -31,21 +32,29 @@ export function Header() {
                 Account Settings
               </a>
               <ul className="dropdown-menu">
-                <li>
-                  <li className="dropdown-item">
-                    <Link to="/signup">Signup</Link>
+                {localStorage.jwt === undefined ? (
+                  <>
+                    <li>
+                      <li className="dropdown-item">
+                        <Link to="/signup">Signup</Link>
+                      </li>
+                      <li className="dropdown-item">
+                        <Link to="/login">Login</Link>
+                      </li>
+                    </li>
+                  </>
+                ) : (
+                  <li>
+                    {/* <li className="dropdown-item"> */}
+                    <li>
+                      <LogoutLink />
+                    </li>
+                    {/* </li> */}
                   </li>
-                  <li className="dropdown-item">
-                    <Link to="/login">Login</Link>
-                  </li>
-                  <li className="dropdown-item">
-                    <Link to="/logout">Logout</Link>
-                    {/* <LogoutLink />                   */}
-                  </li>
-                </li>
+                )}
+                ;
               </ul>
             </li>
-
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/about">About</Link>
