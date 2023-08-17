@@ -7,7 +7,7 @@ export function PostsIndex(props) {
         <div key={post.id} className="posts">
           <h2>{post.title}</h2>
           <img src={post.image} alt={post.title} />
-          <p>Body: {post.body}</p>
+          {/* <p>Body: {post.body}</p> I only want the body of the post to show when you click on the modal */}
           <button onClick={() => props.onShowPost(post)}>More info</button>
         </div>
       ))}

@@ -20,42 +20,41 @@ export function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Account Settings
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <li className="dropdown-item">
+                    <Link to="/signup">Signup</Link>
+                  </li>
+                  <li className="dropdown-item">
+                    <Link to="/login">Login</Link>
+                  </li>
+                  <li className="dropdown-item">
+                    <Link to="/logout">Logout</Link>
+                    {/* <LogoutLink />                   */}
+                  </li>
+                </li>
+              </ul>
+            </li>
+
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link to="/about">About</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/login">Login</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/logout">Logout</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/signup">Signup</Link>
               </li>
               <li className="nav-item">
                 <Link to="/">All Posts</Link>
               </li>
               <li className="nav-item">
                 <Link to="/posts/new">New Post</Link>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  More Settings
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="">
-                      Coming Soon...
-                    </a>
-                  </li>
-                </ul>
               </li>
             </ul>
             <form className="d-flex" role="search">
