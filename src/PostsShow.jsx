@@ -1,3 +1,6 @@
+// import { AwesomeButton } from "react-awesome-button";
+// import "react-awesome-button/dist/styles.css";
+
 export function PostsShow(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -8,6 +11,15 @@ export function PostsShow(props) {
   const handleClick = () => {
     props.onDestroyPost(props.post);
   };
+
+  // function Button() {
+  //   return (
+  //     <AwesomeButton type="primary" onClick={handleClick}>
+  //       Destroy this post
+  //     </AwesomeButton>
+  //   );
+  // }
+
   return (
     <div id="posts-show">
       <h1>More Info</h1>
@@ -26,7 +38,10 @@ export function PostsShow(props) {
         </div>
         <button type="submit">Update Post</button>
       </form>
+      {/* <AwesomeButton onClick={handleClick}>Delete this Post! </AwesomeButton> */}
+
       <button onClick={handleClick}>Delete this Post! </button>
+      {/* <Button /> */}
     </div>
   );
 }
